@@ -1,3 +1,5 @@
+![Coverage Status](https://coveralls.io/repos/github/michaelcwalsh/year-end/badge.svg)
+
 # README
 
 This README would normally document whatever steps are necessary to get the
