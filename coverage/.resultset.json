@@ -26,7 +26,7 @@
       "/Users/michaelcwalsh/Desktop/yearend/app/controllers/pages_controller.rb": [
         1,
         1,
-        2,
+        12,
         null,
         null
       ],
@@ -39,7 +39,7 @@
         1,
         null,
         1,
-        0,
+        16,
         null,
         null,
         null,
@@ -50,8 +50,8 @@
         null,
         null,
         null,
-        0,
-        0,
+        16,
+        16,
         null,
         null,
         null,
@@ -84,6 +84,6 @@
         0
       ]
     },
-    "timestamp": 1476815612
+    "timestamp": 1476821888
   }
 }

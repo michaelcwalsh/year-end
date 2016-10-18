@@ -9,97 +9,101 @@ feature "Prospective user" do
     expect(page).to have_link("Sign Up")
   end
 
-  scenario "clicks link to sign up" do
+  before "clicks link to sign up" do
     visit root_path
     click_link "Sign Up"
+  end
 
-    scenario "sees fields to complete sign up" do
-      expect(page).to have_content("Email (required)")
-      expect(page).to have_content("Username (required)")
-      expect(page).to have_content("Name (required)")
-      expect(page).to have_content("Location (optional)")
-      expect(page).to have_content("Bio (optional)")
-      expect(page).to have_content("Password (required)")
-      expect(page).to have_content("Confirm Password (required)")
-    end
+  scenario "sees fields to complete sign up" do
+    expect(page).to have_content("Email (required)")
+    expect(page).to have_content("Username (required)")
+    expect(page).to have_content("Name (required)")
+    expect(page).to have_content("Location (optional)")
+    expect(page).to have_content("Bio (optional)")
+    expect(page).to have_content("Password (required)")
+    expect(page).to have_content("Confirm Password (required)")
+  end
 
-    scenario "correctly fills out form" do
+  context "correctly fills out form" do
+    before do
       fill_in "Email (required)", with: user1.email
       fill_in "Username (required)", with: user1.username
       fill_in "Name (required)", with: user1.name
       fill_in "Password (required)", with: user1.password
       fill_in "Confirm Password (required)", with: user1.password
-      click_button "Sign Up"
-
-      scenario "is redirected to a home page after clicking submit" do
-        expect(page).to have_current_path(root_path)
-      end
-
-      scenario "sees flash message informing them of successful sign up" do
-        expect(page).to have_content("Sign up successful. Welcome to Year End.")
-      end
+      click_button "Sign up"
     end
 
-    scenario "leaves required fields blank" do
-      click_button "Sign Up"
-
-      scenario "receives error" do
-        expect(page).to have_content("Email cannot be blank // Username cannot be blank // Name cannot be blank // Password cannot be blank")
-      end
+    scenario "is redirected to a home page after clicking submit" do
+      expect(page).to have_current_path(root_path)
     end
 
-    scenario "enters two seperate passwords" do
+    scenario "sees flash message informing them of successful sign up" do
+      expect(page).to have_content("Sign up successful. Welcome to Year End.")
+    end
+  end
+
+  context "leaves required fields blank" do
+    scenario "receives error" do
+      click_button "Sign up"
+      expect(page).to have_content("Email can't be blank")
+      expect(page).to have_content("Username can't be blank")
+      expect(page).to have_content("Name can't be blank")
+      expect(page).to have_content("Password can't be blank")
+    end
+  end
+
+  context "enters two seperate passwords" do
+    scenario "receives error" do
       fill_in "Email (required)", with: user1.email
       fill_in "Username (required)", with: user1.username
       fill_in "Name (required)", with: user1.name
       fill_in "Password (required)", with: user1.password
-      fill_in "Confirm Password (required)", with: user2.password
-      click_button "Sign Up"
+      fill_in "Confirm Password (required)", with: "123456890"
+      click_button "Sign up"
 
-      scenario "receives error" do
-        expect(page).to have_content("Password and Confirm Password do not match")
-      end
+      expect(page).to have_content("Password confirmation doesn't match Password")
     end
+  end
 
-    scenario "enters an incorrectly formatted password" do
+  context "enters an incorrectly formatted password" do
+    scenario "receives error" do
       fill_in "Email (required)", with: user1.email
       fill_in "Username (required)", with: user1.username
       fill_in "Name (required)", with: user1.name
       fill_in "Password (required)", with: "12345"
       fill_in "Confirm Password (required)", with: "12345"
-      click_button "Sign Up"
+      click_button "Sign up"
 
-      scenario "receives error" do
-        expect(page).to have_content("Password must be at least six characters")
-      end
+      expect(page).to have_content("Password is too short (minimum is 6 characters)")
     end
+  end
 
-    scenario "enters an email that already exists" do
-      user1.create
-      fill_in "Email (required)", with: user1.email
+  context "enters an email that already exists" do
+    scenario "receives error" do
+      user3 = FactoryGirl.create(:user)
+      fill_in "Email (required)", with: user3.email
       fill_in "Username (required)", with: user2.username
       fill_in "Name (required)", with: user2.name
       fill_in "Password (required)", with: user2.password
       fill_in "Confirm Password (required)", with: user2.password
-      click_button "Sign Up"
+      click_button "Sign up"
 
-      scenario "receives error" do
-        expect(page).to have_content("Email already taken. Try again.")
-      end
+      expect(page).to have_content("Email has already been taken")
     end
+  end
 
-    scenario "enters an username that already exists" do
-      user1.create
+  context "enters an username that already exists" do
+    scenario "receives error" do
+      user3 = FactoryGirl.create(:user)
       fill_in "Email (required)", with: user2.email
-      fill_in "Username (required)", with: user1.username
+      fill_in "Username (required)", with: user3.username
       fill_in "Name (required)", with: user2.name
       fill_in "Password (required)", with: user2.password
       fill_in "Confirm Password (required)", with: user2.password
-      click_button "Sign Up"
+      click_button "Sign up"
 
-      scenario "receives error" do
-        expect(page).to have_content("Username already taken. Try again.")
-      end
+      expect(page).to have_content("Username has already been taken")
     end
   end
 end

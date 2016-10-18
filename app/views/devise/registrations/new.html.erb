@@ -4,21 +4,38 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email %>
+    <em><%= f.label :email, "Email (required)" %></em><br />
   </div>
 
   <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <%= f.text_field :username %>
+    <em><%= f.label :username, "Username (required)" %></em><br />
+  </div>
+
+  <div class="field">
+    <%= f.text_field :name %>
+    <em><%= f.label :name, "Name (required)" %></em><br />
+  </div>
+
+  <div class="field">
+    <%= f.text_field :location %>
+    <em><%= f.label :location, "Location (optional)" %></em><br />
+  </div>
+
+  <div class="field">
+    <%= f.text_area :bio %>
+    <em><%= f.label :bio, "Bio (optional)" %></em><br />
+  </div>
+
+  <div class="field">
     <%= f.password_field :password, autocomplete: "off" %>
+    <em><%= f.label :password, "Password (required)" %></em><br />
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <em><%= f.label :password_confirmation, "Confirm Password (required)" %></em><br />
   </div>
 
   <div class="actions">
