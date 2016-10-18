@@ -1,0 +1,82 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/michaelcwalsh/Desktop/yearend/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/michaelcwalsh/Desktop/yearend/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/michaelcwalsh/Desktop/yearend/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/michaelcwalsh/Desktop/yearend/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/michaelcwalsh/Desktop/yearend/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/michaelcwalsh/Desktop/yearend/app/controllers/application_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/michaelcwalsh/Desktop/yearend/app/controllers/users_controller.rb": [
+        0,
+        0
+      ],
+      "/Users/michaelcwalsh/Desktop/yearend/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/michaelcwalsh/Desktop/yearend/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1476739130
+  }
+}

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'home#index'
   resources :users
+
+  get "/pages/:page" => "pages#show"
+  root "pages#show", page: "home"
 end
