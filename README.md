@@ -1,3 +1,4 @@
+![Build Status](https://codeship.com/projects/1a9a4f20-77a0-0134-e1bb-426e7deb1a75/status?branch=master)
 ![Coverage Status](https://coveralls.io/repos/github/michaelcwalsh/year-end/badge.svg)
 
 # README
