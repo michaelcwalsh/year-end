@@ -2,7 +2,6 @@ require "rails_helper"
 
 feature "Prospective user" do
   let!(:user1) { FactoryGirl.create(:user) }
-  let!(:user2) { FactoryGirl.create(:user) }
 
   scenario "sees link to sign in" do
     visit root_path
@@ -32,13 +31,13 @@ feature "Prospective user" do
     end
 
     scenario "sees flash message informing them of successful sign in" do
-      expect(page).to have_content("Sign in successful. Welcome to Year End.")
+      expect(page).to have_content("Sign in successful. Welcome back to Year End.")
     end
   end
 
   context "incorrectly fills out form" do
     scenario "receives error" do
-      click_button "Sign in"
+      click_button "Log in"
       expect(page).to have_content("Invalid Email or password")
     end
   end
