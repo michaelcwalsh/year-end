@@ -27,7 +27,8 @@ feature "Prospective user" do
 
     scenario "is redirected to a home page after clicking submit" do
       expect(page).to have_current_path(root_path)
-      expect(page).to have_content("Logged in as #{user1.username}")
+      expect(page).to have_content("#{user1.username}")
+      expect(page).to have_content("#{user1.name}")
     end
 
     scenario "sees flash message informing them of successful sign in" do
