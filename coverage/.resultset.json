@@ -12,11 +12,21 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "/Users/michaelcwalsh/Desktop/yearend/app/models/application_record.rb": [
         1,
         1,
+        null
+      ],
+      "/Users/michaelcwalsh/Desktop/yearend/app/uploaders/avatar_uploader.rb": [
+        1,
+        1,
+        1,
+        null,
+        0,
+        null,
         null
       ],
       "/Users/michaelcwalsh/Desktop/yearend/app/helpers/application_helper.rb": [
@@ -69,6 +79,10 @@
         0,
         0
       ],
+      "/Users/michaelcwalsh/Desktop/yearend/app/controllers/albums_controller.rb": [
+        0,
+        0
+      ],
       "/Users/michaelcwalsh/Desktop/yearend/app/controllers/users_controller.rb": [
         0,
         0
@@ -82,8 +96,18 @@
         0,
         0,
         0
+      ],
+      "/Users/michaelcwalsh/Desktop/yearend/app/models/album.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ]
     },
-    "timestamp": 1476842308
+    "timestamp": 1476977681
   }
 }
