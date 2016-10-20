@@ -4,38 +4,43 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.email_field :email %>
-    <em><%= f.label :email, "Email (required)" %></em><br />
+    <em><%= f.label :email, "Email (required)" %></em>
+    <%= f.email_field :email %><br />
   </div>
 
   <div class="field">
-    <%= f.text_field :username %>
-    <em><%= f.label :username, "Username (required)" %></em><br />
+    <em><%= f.label :username, "Username (required)" %></em>
+    <%= f.text_field :username %><br />
   </div>
 
   <div class="field">
-    <%= f.text_field :name %>
-    <em><%= f.label :name, "Name (required)" %></em><br />
+    <em><%= f.label :name, "Name (required)" %></em>
+    <%= f.text_field :name %><br />
   </div>
 
   <div class="field">
-    <%= f.text_field :location %>
-    <em><%= f.label :location, "Location (optional)" %></em><br />
+    <em><%= f.label :location, "Location (optional)" %></em>
+    <%= f.text_field :location %><br />
   </div>
 
   <div class="field">
-    <%= f.text_area :bio %>
-    <em><%= f.label :bio, "Bio (optional)" %></em><br />
+    <em><%= f.label :bio, "Bio (optional)" %></em>
+    <%= f.text_area :bio %><br />
   </div>
 
   <div class="field">
-    <%= f.password_field :password, autocomplete: "off" %>
-    <em><%= f.label :password, "Password (required)" %></em><br />
+    <em><%= f.label :avatar, "Add Avatar (optional)" %></em>
+    <%= f.file_field :avatar %><br />
   </div>
 
   <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    <em><%= f.label :password_confirmation, "Confirm Password (required)" %></em><br />
+    <em><%= f.label :password, "Password (required)" %></em>
+    <%= f.password_field :password, autocomplete: "off" %><br />
+  </div>
+
+  <div class="field">
+    <em><%= f.label :password_confirmation, "Confirm Password (required)" %></em>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %><br />
   </div>
 
   <div class="actions">

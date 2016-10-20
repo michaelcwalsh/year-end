@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'listen'
 gem 'devise'
 gem 'foundation-rails'
+gem 'carrierwave'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'capybara'
