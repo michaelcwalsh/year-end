@@ -5,6 +5,7 @@ class AlbumsController < ApplicationController
     @id = params[:id]
     @result = HTTParty.get('https://api.spotify.com/v1/albums/' + @id)
   end
+  
   def new
     @album = Album.new
   end

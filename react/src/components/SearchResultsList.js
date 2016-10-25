@@ -9,18 +9,7 @@ class SearchResultsList extends Component {
     );
   };
 
-  buttonClick(){
-    $.post({
-      url: '/albums/new.json',
-      type: "POST",
-      data: { id: id },
-      dataType: "json"
-    });
-  }
-
   renderAlbums(){
-    let onClick = () => this.buttonClick();
-    let addAlbum = <button className="button" onClick={onClick}>Add</button>
     if (this.props.albums === undefined) {
       return ''
     } else {
@@ -29,7 +18,7 @@ class SearchResultsList extends Component {
       return (
         <ul>
           <div className="dropdown-item"><a href={"/albums/" + this.props.albums.albums.items[0].id}><img src={this.props.albums.albums.items[0].images[2].url}/>
-          {this.props.albums.albums.items[0].name}{addAlbum}</a></div>
+          {this.props.albums.albums.items[0].name}</a></div>
           <div className="dropdown-item"><a href="/albums/new" id={this.props.albums.albums.items[0].id}><img src={this.props.albums.albums.items[1].images[2].url}/>
           {this.props.albums.albums.items[1].name}</a></div>
           <div className="dropdown-item"><a href="/albums/new" id={this.props.albums.albums.items[0].id}><img src={this.props.albums.albums.items[2].images[2].url}/>
