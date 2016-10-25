@@ -1,9 +1,16 @@
 // @import "*";
 //
+
+.loginpage {
+  background-color: white;
+  // background-image: url("../assets/images/record-collection.jpg");
+}
 body {
-  background-color: #ECE5CE;
+  background-color: #91A398;
   width: 100%;
+  height: 100%;
   margin: 0;
+  font-family: Arial;
 }
 
 // #header {
@@ -13,6 +20,7 @@ body {
 #main {
   position: relative;
   width: 80%;
+  height: 1200px;
   margin: auto;
   box-shadow: 1px 1px 1px 1px #888888;
   background-color: white;
@@ -30,14 +38,19 @@ body {
   position: relative;
   // box-shadow: 2px 2px 2px 2px #888888;
   width: 15%;
+  margin-left: 1.5em;
   // height: 100%;
   float: left;
+  border-style: inset;
+  word-wrap: break-word;
+
 }
 
 #title {
   color: white;
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
   text-align: center;
-  background: #ECE5CE;
+  background: #91A398;
   background-size: cover;
   height: relative;
   color: white;
@@ -53,11 +66,40 @@ body {
 }
 
 .biobar-item {
-  border-style: inset;
+  color: white;
+}
+
+.dropdown-item {
+  padding: 1em;
+  border: 0.25em solid #A8A39D;
+  border-top: 0em;
+  margin: 0em;
+  width: 70%;
+}
+
+.dropdown-menu {
+  margin: 0em;
+  padding: 0em;
+}
+
+#search_q {
+  width: 80%;
+  height: 4em;
+  margin: 2em 2em 0em 2em;
+  align-self: center;
 }
 
 img {
-  width: 8em;
+  width: 4em;
   height: auto;
   border-radius: 50%;
 }
+
+a {
+  // color: white;
+  text-decoration: none;
+}
+
+// a:hover {
+//     text-decoration: underline;
+// }
