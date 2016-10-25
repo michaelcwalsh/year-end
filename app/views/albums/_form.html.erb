@@ -1,0 +1,13 @@
+<%= form_for(@album, multipart: true) do |q| %>
+  <div class="field">
+    <em><%= q.label :notes, "Notes (optional)" %></em>
+    <%= q.text_area :notes %><br />
+  </div>
+  <div class="field">
+    <em><%= q.label :blurb, "Blurb (optional)" %></em>
+    <%= q.text_area :blurb %><br />
+  </div>
+  <div class="actions">
+    <%= q.submit "Submit" %>
+  </div>
+<% end %>

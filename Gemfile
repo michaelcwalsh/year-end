@@ -11,6 +11,7 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'httparty'
 
 group :development, :test do
   gem 'capybara'
