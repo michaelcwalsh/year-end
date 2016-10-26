@@ -1,3 +1,5 @@
-<div class="album-show-page"><%= image_tag @album.art %></div>
-<%= @album.title %>
+<img class="album-show-page"><%= image_tag @album.art %></img>
 <%= @album.artist %>
+<%= @album.title %>
+
+<%= render "rankingform" %>

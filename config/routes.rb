@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :albums
+
+  # namespace "/albums#show" do
+  #   resources :albums, only: [:create]
+  # end
 end
