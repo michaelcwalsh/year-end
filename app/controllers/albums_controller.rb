@@ -17,7 +17,6 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     @album.user = current_user
-    binding.pry
     if @album.save
       @album.save
       redirect_to albums_path
@@ -28,7 +27,7 @@ class AlbumsController < ApplicationController
   end
 
   def index
-    @albums = Album.all.order(:rating)
+    @albums = Album.all.order(:rating).reverse_order
   end
 
   private
