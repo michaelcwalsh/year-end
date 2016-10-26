@@ -1,5 +1,5 @@
 <div class="album-form">
-  <h2><%= @album.title %></h2>
+  <h2><%= %></h2>
 
   <%= form_for @album do |f| %>
     <% if @album.errors.any? %>
@@ -13,5 +13,4 @@
     <% end %>
   <% end %>
 
-  <%= render "form" %>
 </div>

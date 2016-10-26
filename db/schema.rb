@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161020000501) do
+ActiveRecord::Schema.define(version: 20161025192344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,9 @@ ActiveRecord::Schema.define(version: 20161020000501) do
     t.integer  "user_id",    null: false
     t.string   "title",      null: false
     t.string   "artist",     null: false
-    t.string   "year",       null: false
-    t.string   "rank",       null: false
+    t.string   "rating",     null: false
     t.string   "art"
     t.text     "notes"
-    t.text     "blurb"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_albums_on_user_id", using: :btree

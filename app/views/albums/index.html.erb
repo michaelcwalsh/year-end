@@ -1,0 +1,9 @@
+<div id="index">
+  <% @albums.each do |album| %>
+    <li>
+    <%= album.title %>
+    <%= album.artist %>
+    <%= album.rating %>
+    </li>
+  <% end %>
+</div>
