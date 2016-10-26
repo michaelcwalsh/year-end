@@ -1,9 +1,11 @@
 <div id="index">
   <% @albums.each do |album| %>
-    <li>
-    <%= album.title %>
-    <%= album.artist %>
-    <%= album.rating %>
-    </li>
+    <% if album.user_id == current_user.id %>
+      <li>
+      <%= album.title %>
+      <%= album.artist %>
+      <%= album.rating %>
+      </li>
+    <% end %>
   <% end %>
 </div>
