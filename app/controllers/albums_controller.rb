@@ -19,7 +19,7 @@ class AlbumsController < ApplicationController
     @album.user = current_user
     if @album.save
       @album.save
-      redirect_to albums_path
+      redirect_to user_path(current_user.id)
       flash[:notice] = "Added to list"
     else
       render :new

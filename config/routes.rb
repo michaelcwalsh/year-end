@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root "pages#show", page: "home"
 
   devise_for :users
-  resources :users
-  resources :albums
+  resources :albums, only: [:show, :new, :create]
+  resources :users do
+    resources :albums, only: [:index]
+  end
 
   # namespace "/albums#show" do
   #   resources :albums, only: [:create]

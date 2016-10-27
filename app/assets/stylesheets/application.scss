@@ -1,16 +1,17 @@
 // @import "*";
 //
 
-.loginpage {
-  background-color: white;
-  // background-image: url("../assets/images/record-collection.jpg");
-}
+// .loginpage {
+//   background-color: white;
+// }
 body {
-  background-color: #91A398;
   width: 100%;
-  height: 100%;
+  height: 1200px;
   margin: 0;
   font-family: Arial;
+  background-image: url(year_end_cover_photo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 // #header {
@@ -19,13 +20,14 @@ body {
 
 #main {
   position: relative;
-  width: 80%;
+  width: 67%;
   height: 1200px;
   margin: auto;
+  margin-top: 0;
   box-shadow: 1px 1px 1px 1px #888888;
   background-color: white;
   border-radius: 3px;
-  float: right;
+  // float: right;
 }
 
 
@@ -53,12 +55,80 @@ body {
   background: #91A398;
   background-size: cover;
   height: relative;
-  color: white;
   text-transform: uppercase;
   font-size: 200%;
   font-weight: bold;
   letter-spacing: 1px;
   padding: .5em;
+  margin-bottom: 0em;
+
+  .title-left {
+    float: left;
+    font-size: 70%;
+    margin-top: 0.25em;
+  }
+
+  .title-right {
+    float: right;
+    font-size: 75%;
+    margin-top: 0.25em;
+  }
+
+}
+
+.flash {
+  background: #91A398;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  padding-left: 6em;
+  text-transform: lowercase;
+  font-weight: bold;
+  color: #551A8B;
+  text-shadow: -0.2px 0 black, 0 0.2px black, 0.2px 0 black, 0 -0.2px black;
+  letter-spacing: 0.5px;
+
+}
+
+// .title-left#title {
+//   color: white;
+//   text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+//   text-align: left;
+//   text-transform: uppercase;
+//   font-size: 150%;
+//   font-weight: bold;
+//   letter-spacing: 1px;
+//   padding: .5em;
+// }
+//
+// .title-right#title {
+//   color: white;
+//   text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+//   text-align: right;
+//   text-transform: uppercase;
+//   font-size: 150%;
+//   font-weight: bold;
+//   letter-spacing: 1px;
+//   padding: .5em;
+// }
+
+#sign-in {
+  position: relative;
+  width: 67%;
+  height: 1200px;
+  margin: auto;
+  box-shadow: 1px 1px 1px 1px #888888;
+  background-color: white;
+  border-radius: 3px;
+}
+
+#sign-up {
+  position: relative;
+  width: 67%;
+  height: 1200px;
+  margin: auto;
+  box-shadow: 1px 1px 1px 1px #888888;
+  background-color: white;
+  border-radius: 3px;
 }
 
 .navbar {
@@ -96,6 +166,13 @@ img {
 }
 
 
+#header-pic img {
+    width: 1.5em;
+    margin-right: .5em;
+}
+
+
+
 .album-show-page img {
   width: 8em;
   height: auto;
@@ -103,10 +180,9 @@ img {
 
 
 a {
-  // color: white;
   text-decoration: none;
 }
 
-// a:hover {
-//     text-decoration: underline;
-// }
+a:hover {
+    text-decoration: none;
+}

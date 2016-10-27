@@ -12,30 +12,19 @@
   </head>
 
   <body>
-    <div id="header">
-    <div id="title"><%= link_to('Year End', root_path) %></div>
-    <% if user_signed_in? %>
-    <div id="biobar">
-      <div id="biobar-image"><%= image_tag current_user.avatar %></div>
-      <div class="biobar-item"><%= current_user.username %></div>
-      <div class="biobar-item"><%= current_user.name %></div>
-      <div class="biobar-item"><%= current_user.location %></div>
-      <div class="biobar-item"><%= current_user.bio %></div>
-      <div class="biobar-item"><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %></div>
-    </div>
-    <% end %>
-    </div>
-    <div id="main">
-    <div id="loginpage">
+    <div id="title"><%= link_to('Year End', root_path) %>
     <% unless user_signed_in? %>
-    <%= link_to('Sign Up', new_user_registration_path) %>
-    <%= link_to('Sign In', new_user_session_path)  %>
+    <div class="title-right"><%= link_to('Sign In', new_user_session_path)  %></div>
+    <div class="title-left"><%= link_to('Sign Up', new_user_registration_path) %></div>
     <% end %>
-    <%= notice %>
-    <%= alert %>
-
+    <% if user_signed_in? %>
+    <div class="title-left" id="header-pic"><%= image_tag current_user.avatar %></div>
+    <div class="title-left"><%= link_to('My Profile', user_path(current_user.id)) %></div>
+    <div class="title-right"><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %></div>
+    <% end %>
+    </div>
+    <p class="notice flash"><%= notice %></p>
+    <p class="alert flash"><%= alert %></p>
     <%= yield %>
-    </div>
-    </div>
   </body>
 </html>
