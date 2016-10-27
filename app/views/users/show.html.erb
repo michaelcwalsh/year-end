@@ -1,28 +1,30 @@
-<div class="user-show-page row">
-  <div class="user-show small-4 columns">
-    <p class="user-image"><%= image_tag @user.avatar %></p>
+<div id="main">
+  <div class="user-show-page row">
+    <div class="user-show small-4 columns">
+      <p class="user-image"><%= image_tag @user.avatar %></p>
+    </div>
+
+    <div class="small-4 columns">
+      <p class="user-text"><%= @user.username %></p>
+      <p class="user-text"><%= @user.name %></p>
+    </div>
+
+    <div class="user-reviews small-4 columns">
+      <p class="user-text"><%= @user.location %></p>
+      <p class="user-text"><%= @user.bio %></p>
+    </div>
   </div>
 
-  <div class="small-4 columns">
-    <p class="user-text"><%= @user.username %></p>
-    <p class="user-text"><%= @user.name %></p>
-  </div>
 
-  <div class="user-reviews small-4 columns">
-    <p class="user-text"><%= @user.location %></p>
-    <p class="user-text"><%= @user.bio %></p>
-  </div>
-</div>
-
-
-<div id="index">
-  <% @albums.each do |album| %>
-    <% if album.user_id == @user.id %>
-      <li>
-      <%= album.title %>
-      <%= album.artist %>
-      <%= album.rating %>
-      </li>
+  <div id="index">
+    <% @albums.each do |album| %>
+      <% if album.user_id == @user.id %>
+        <li>
+        <%= album.title %>
+        <%= album.artist %>
+        <%= album.rating %>
+        </li>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
