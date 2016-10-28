@@ -4,11 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :albums, only: [:show, :new, :create]
-  resources :users do
+  resources :users, only: [:show] do
     resources :albums, only: [:index]
   end
-
-  # namespace "/albums#show" do
-  #   resources :albums, only: [:create]
-  # end
 end
