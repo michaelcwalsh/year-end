@@ -1,30 +1,49 @@
-<div id="main">
-  <div class="user-show-page row">
-    <div class="user-show small-4 columns">
-      <p class="user-image"><%= image_tag @user.avatar %></p>
-    </div>
+<div id="user-show">
+  <div class="user-show-bio">
+      <div class="user-image"><%= image_tag @user.avatar %></div>
 
-    <div class="small-4 columns">
-      <p class="user-text"><%= @user.username %></p>
-      <p class="user-text"><%= @user.name %></p>
-    </div>
+      <div class="user-name"><%= @user.name %></div>
+      <div class="user-username">@<%= @user.username %></div>
 
-    <div class="user-reviews small-4 columns">
-      <p class="user-text"><%= @user.location %></p>
-      <p class="user-text"><%= @user.bio %></p>
-    </div>
+      <div class="user-location">Location: <%= @user.location %></div>
+      <div class="user-bio">Bio: <%= @user.bio %></div>
   </div>
 
 
   <div id="index">
+    <div class="album-list-text">Album List:</div>
+    <% my_albums = [] %>
     <% @albums.each do |album| %>
       <% if album.user_id == @user.id %>
-        <li>
-        <%= album.title %>
-        <%= album.artist %>
-        <%= album.rating %>
-        </li>
+        <% my_albums << album %>
       <% end %>
+    <% end %>
+    <% my_albums.each_with_index do |my_album, index| %>
+      <div class="album">
+        <ul>
+          <div class="album-bar">
+            <span class="album-pic"><%= image_tag my_album.art %></span>
+            <span class="album-text">
+              <%= index + 1 %>.
+              "<%= my_album.title %>"
+              by <%= my_album.artist %>
+              — <%= my_album.rating %>
+            </span>
+          </div>
+          <div class="sub-album-bar">
+            <div class="my-review"><%= my_album.notes %></div>
+            <div class="user-review">
+              <% useralbums = Album.where(title: my_album.title) %>
+              <% useralbums.each do |useralbum| %>
+                <% unless useralbum.user_id == @user.id %>
+                  <%= @users.find(useralbum.user_id).username %>
+                  <%= useralbum.rating %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </ul>
+      </div>
     <% end %>
   </div>
 </div>

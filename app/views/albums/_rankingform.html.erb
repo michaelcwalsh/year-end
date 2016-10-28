@@ -1,11 +1,11 @@
 <%= form_for(@album, multipart: true) do |q| %>
-  <div class="field">
-    <em><%= q.label :rating, "Rating (0-10, decimals encouraged)(required)" %></em>
-    <%= q.text_field :rating %><br />
+  <div class="ranking-field">
+    <em><%= q.label :rating, "Rating (required) (0-10; decimals encouraged)" %></em>
+    <span id="rating-form"><%= q.text_field :rating %><br /></span>
   </div>
-  <div class="field">
-    <em><%= q.label :notes, "Notes (optional)" %></em>
-    <%= q.text_area :notes %><br />
+  <div class="ranking-field">
+    <div id="notes-label"><em><%= q.label :notes, "Notes (optional)" %></em></div>
+    <div id="notes-form"><%= q.text_area :notes %><br /></div>
   </div>
   <div class="hidden-field">
     <%= q.hidden_field :artist, value: @album.artist %>

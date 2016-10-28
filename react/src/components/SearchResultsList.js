@@ -17,8 +17,12 @@ class SearchResultsList extends Component {
         <ul>
           {this.props.albums.albums.items.map(function(album) {
             return (
-              <div className="dropdown-item"><a href={"/albums/" + album.id}><img className="circle" src={album.images[2].url}/>
-              {album.name}</a></div>
+              <a href={"/albums/" + album.id}>
+              <div className="dropdown-item">
+              <span><img id="dropdown-image" src={album.images[2].url}/></span>
+              <span id="dropdown-title">{album.name}</span>
+              </div>
+              </a>
             );
           })}
           <div className="dropdown-item"><a href="/albums/new">Or add it yourself</a></div>

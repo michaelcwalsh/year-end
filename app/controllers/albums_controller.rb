@@ -22,12 +22,9 @@ class AlbumsController < ApplicationController
       redirect_to user_path(current_user.id)
       flash[:notice] = "Added to list"
     else
-      render :new
+      flash[:alert] = "Rating cannot be blank"
+      render :show
     end
-  end
-
-  def index
-    @albums = Album.all.order(:rating).reverse_order
   end
 
   private
