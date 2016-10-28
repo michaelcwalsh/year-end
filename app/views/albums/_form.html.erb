@@ -1,13 +1,25 @@
 <%= form_for(@album, multipart: true) do |q| %>
   <div class="field">
-    <em><%= q.label :notes, "Notes (optional)" %></em>
-    <%= q.text_area :notes %><br />
+    <em><%= q.label :artist, "Artist (required)" %></em>
+    <%= q.text_field :artist %><br />
   </div>
   <div class="field">
-    <em><%= q.label :blurb, "Blurb (optional)" %></em>
-    <%= q.text_area :blurb %><br />
+    <em><%= q.label :title, "Album title (required)" %></em>
+    <%= q.text_field :title %><br />
+  </div>
+  <div class="field">
+    <em><%= q.label :remote_art_url, "Paste Album Art URL (required)" %></em>
+    <%= q.text_field :remote_art_url %><br />
+  </div>
+  <div class="field">
+    <em><%= q.label :rating, "Rating (required) (0-10; decimals encouraged)" %></em>
+    <%= q.text_field :rating %><br />
+  </div>
+  <div class="field">
+    <div id="notes-label"><em><%= q.label :notes, "Notes (optional)" %></em></div>
+    <div id="notes-form"><%= q.text_area :notes %><br /></div>
   </div>
   <div class="actions">
-    <%= q.submit "Submit" %>
+    <%= q.submit "Add to list" %>
   </div>
 <% end %>

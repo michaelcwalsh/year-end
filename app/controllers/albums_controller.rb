@@ -11,7 +11,7 @@ class AlbumsController < ApplicationController
   end
 
   def new
-    # @album = Album.new(album_params)
+    @album = Album.new
   end
 
   def create
@@ -38,6 +38,7 @@ class AlbumsController < ApplicationController
       :rating,
       :art,
       :notes,
+      :remote_art_url
     )
   end
 end
