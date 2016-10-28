@@ -5,8 +5,12 @@
       <div class="user-name"><%= @user.name %></div>
       <div class="user-username">@<%= @user.username %></div>
 
+      <% unless @user.location == "" %>
       <div class="user-location">Location: <%= @user.location %></div>
+      <% end %>
+      <% unless @user.bio == "" %>
       <div class="user-bio">Bio: <%= @user.bio %></div>
+      <% end %>
   </div>
 
 
@@ -35,12 +39,15 @@
               <% useralbums = Album.where(title: my_album.title) %>
               <% useralbums.each do |useralbum| %>
                 <% unless useralbum.user_id == @user.id %>
-                  <%= link_to(@users.find(useralbum.user_id).username, user_path(@users.find(useralbum.user_id).id)) %>
-                  — <%= useralbum.rating %>
+                  <ul>
+                    <%= link_to(@users.find(useralbum.user_id).username, user_path(@users.find(useralbum.user_id).id)) %>
+                    — <%= useralbum.rating %>
+                  </ul>
                 <% end %>
               <% end %>
             </div>
-            <div class="my-review"><%= my_album.notes %></div>
+            <div class="my-review"><%= simple_format(my_album.notes) %></div>
+            <%= embed(my_album.artist, my_album.title) %>
           </div>
         </ul>
       </div>
