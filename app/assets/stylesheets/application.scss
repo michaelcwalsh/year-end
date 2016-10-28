@@ -308,9 +308,19 @@ ol {
 .sub-album-bar {
   background-color: #F2F2F2;
   background-size: cover;
+  padding: 3em;
+  margin-right: 2em;
+  // padding-left: 4em;
 }
 
 .my-review {
+  text-align: left;
+  width: 40%;
+}
+
+.user-review {
+  text-align: right;
+  float: right;
 }
 
 a {

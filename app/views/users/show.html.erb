@@ -31,16 +31,16 @@
             </span>
           </div>
           <div class="sub-album-bar">
-            <div class="my-review"><%= my_album.notes %></div>
             <div class="user-review">
               <% useralbums = Album.where(title: my_album.title) %>
               <% useralbums.each do |useralbum| %>
                 <% unless useralbum.user_id == @user.id %>
-                  <%= @users.find(useralbum.user_id).username %>
-                  <%= useralbum.rating %>
+                  <%= link_to(@users.find(useralbum.user_id).username, user_path(@users.find(useralbum.user_id).id)) %>
+                  — <%= useralbum.rating %>
                 <% end %>
               <% end %>
             </div>
+            <div class="my-review"><%= my_album.notes %></div>
           </div>
         </ul>
       </div>
