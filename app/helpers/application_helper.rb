@@ -1,6 +1,5 @@
 module ApplicationHelper
   require 'httparty'
-  require 'dotenv-rails'
 
   def embed(artist, title)
     response = HTTParty.get("https://www.googleapis.com/youtube/v3/search?part=snippet&q=#{artist}%20#{title}&type=video&key=#{ENV["YOUTUBE_API_KEY"]}")
