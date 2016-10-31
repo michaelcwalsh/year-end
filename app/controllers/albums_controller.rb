@@ -5,7 +5,7 @@ class AlbumsController < ApplicationController
     @id = params[:id]
     @result = HTTParty.get('https://api.spotify.com/v1/albums/' + @id)
     @album.id = @result["id"]
-    @album.art = @result["images"][1]["url"]
+    @album.spotify_art = @result["images"][1]["url"]
     @album.title = @result["name"]
     @album.artist = @result["artists"][0]["name"]
   end
@@ -22,8 +22,14 @@ class AlbumsController < ApplicationController
       redirect_to user_path(current_user.id)
       flash[:notice] = "Added to list"
     else
-      flash[:alert] = "Rating cannot be blank"
-      render :show
+      if @album.spotify_art.nil?
+        @errors = @album.errors.full_messages.join(" // ")
+        flash[:alert] = @errors
+        render :new
+      else
+        flash[:alert] = "Rating cannot be blank"
+        render :show
+      end
     end
   end
 
@@ -36,6 +42,7 @@ class AlbumsController < ApplicationController
       :title,
       :artist,
       :rating,
+      :spotify_art,
       :art,
       :notes,
       :remote_art_url
