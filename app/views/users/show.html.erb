@@ -16,13 +16,7 @@
 
   <div id="index">
     <div class="album-list-text">Album List:</div>
-    <% my_albums = [] %>
-    <% @albums.each do |album| %>
-      <% if album.user_id == @user.id %>
-        <% my_albums << album %>
-      <% end %>
-    <% end %>
-    <% my_albums.each_with_index do |my_album, index| %>
+    <% @my_albums.each_with_index do |my_album, index| %>
       <div class="album">
         <ul>
           <div class="album-bar">

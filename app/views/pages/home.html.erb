@@ -1,3 +1,11 @@
+<% unless user_signed_in? %>
+<div id="splash-message">
+<%= simple_format "Year End was developed as a capstone project for Launch Academy, a ten-week intensive coding bootcamp based in Boston, MA. While the app's intended usage is to allow users the ability to keep track of new music they listen to over the course of a year, it can be utilized to track any listening habits, really.\n" %>
+<%= simple_format "I've written comprehensive tests as a means of thwarting bugs, but the app is still very much in development and I intend to add/update features on a regular basis. Such is the case, if you encounter any glaring hiccups in your user experience feel free to reach out to me directly via email at michael.c.walsh1@gmail.com or via twitter at @michael_c_walsh.\n" %>
+<%= simple_format "Thanks,\nMichael C. Walsh" %>
+</div>
+<% end %>
+
 <% if user_signed_in? %>
 <div id="main">
 <div id="search"></div>
