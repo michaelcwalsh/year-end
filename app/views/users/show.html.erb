@@ -20,7 +20,11 @@
       <div class="album">
         <ul>
           <div class="album-bar">
+            <% if my_album.spotify_art.nil? %>
             <span class="album-pic"><%= image_tag my_album.art %></span>
+            <% else %>
+            <span class="album-pic"><%= image_tag my_album.spotify_art %></span>
+            <% end %>
             <span class="album-text">
               <%= index + 1 %>.
               "<%= my_album.title %>"

@@ -1,16 +1,6 @@
-<div class="album-form">
-  <h2><%= %></h2>
+<div id="sign-up">
+  <h2>Add album</h2>
 
-  <%= form_for @album do |f| %>
-    <% if @album.errors.any? %>
-      <div id="error_explanation">
-        <ul>
-        <% @album.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-  <% end %>
+  <%= render "form" %>
 
 </div>
