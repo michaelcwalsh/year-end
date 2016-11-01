@@ -28,7 +28,8 @@ class AlbumsController < ApplicationController
         flash[:alert] = @errors
         render :new
       else
-        flash[:alert] = "Rating cannot be blank"
+        @errors = @album.errors.full_messages.join(" // ")
+        flash[:alert] = @errors
         render :show
       end
     end

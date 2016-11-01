@@ -2,6 +2,7 @@ class Album < ActiveRecord::Base
   validates :title, presence: true
   validates :artist, presence: true
   validates :rating, presence: true
+  validates :rating, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 10, message: "rating must be between 0-10." }
 
   belongs_to :user
   mount_uploader :art, ArtUploader
