@@ -4,13 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @users = User.all
-    @albums = Album.all.order(:rating).reverse_order
-    @my_albums = []
-    @albums.each do |album|
-      if album.user_id == @user.id
-        @my_albums << album
-      end
-    end
+    @my_albums = Album.my_albums(@user)
   end
 
   protected
