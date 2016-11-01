@@ -5,5 +5,15 @@ class Album < ActiveRecord::Base
 
   belongs_to :user
   mount_uploader :art, ArtUploader
-  # skip_callback :commit, :after, :remove_previously_stored_art
+
+  def self.my_albums(user)
+    albums = Album.all.order(:rating).reverse_order
+    my_album_array = []
+    albums.each do |album|
+      if album.user_id == user.id
+        my_album_array << album
+      end
+    end
+    my_album_array
+  end
 end

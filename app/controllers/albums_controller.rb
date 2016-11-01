@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  before_action :authorize_user
   require 'httparty'
   def show
     @album = Album.new
@@ -47,5 +48,14 @@ class AlbumsController < ApplicationController
       :notes,
       :remote_art_url
     )
+  end
+
+  protected
+
+  def authorize_user
+    unless user_signed_in?
+      flash[:notice] = "Please sign in or sign up."
+      redirect_to root_path
+    end
   end
 end
