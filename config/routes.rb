@@ -7,4 +7,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :albums, only: [:index]
   end
+  resources :users do
+    member do
+      get :following, :followers    
+    end
+  end
 end
