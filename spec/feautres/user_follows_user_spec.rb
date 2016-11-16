@@ -23,17 +23,4 @@ feature "User follows user" do
     expect(page).to have_content("You are now following #{user2.username}")
     expect(page).to have_button("Unfollow")
   end
-
-  context "follows other user" do
-    before do
-      visit user_path(user2.id)
-      click_button("Follow")
-      visit root_path
-    end
-
-    scenario "sees followed user's data on home page" do
-      expect(page).to have_content(album.title)
-      expect(page).to have_content(album.artist)
-    end
-  end
 end
