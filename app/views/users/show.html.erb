@@ -11,8 +11,10 @@
       <% unless @user.bio == "" %>
       <div class="user-bio">Bio: <%= @user.bio %></div>
       <% end %>
-      <%= render "follow_form" %>
+      <div class="follow-box">
       <%= render "stats" %>
+      <%= render "follow_form" %>
+      </div>
   </div>
 
 
