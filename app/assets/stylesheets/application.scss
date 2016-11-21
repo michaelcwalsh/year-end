@@ -263,6 +263,17 @@ textarea {
   border-radius: 50%;
 }
 
+.follow-box {
+  height: auto;
+  border: 0.2em solid black;
+  background-color: white;
+  border-radius: 2em;
+  margin: 3em;
+  margin-bottom: 1em;
+  padding: 1em;
+  overflow: auto;
+}
+
 #index {
   height: auto;
   border-radius: 2em;
