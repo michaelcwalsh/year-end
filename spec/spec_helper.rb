@@ -17,3 +17,8 @@ def user_sign_in(user)
   fill_in "Password", with: user.password
   click_button "Log in"
 end
+
+def user_follows_user(user1, user2)
+  visit user_path(user2.id)
+  click_button "Follow"
+end
