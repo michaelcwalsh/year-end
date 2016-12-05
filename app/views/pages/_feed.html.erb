@@ -1,24 +1,15 @@
-<% feed_items = [] %>
-<% current_user.following_ids.each do |id| %>
-  <% feed_items << Album.where(user_id: id) %>
-<% end %>
-<% albums = [] %>
-<% feed_items.each do |following| %>
-  <% following.each do |album| %>
-    <% albums << album %>
+<% unless @albums.nil? %>
+  <% @albums[0..2].each do |album| %>
+    <ul class="album-feed-item">
+      <% if album.spotify_art.nil? %>
+      <span class="follower-feed-pic"><%= image_tag album.art %></span>
+      <% else %>
+      <span class="follower-feed-pic"><%= image_tag album.spotify_art %></span>
+      <% end %>
+      <span class="album-feed-user"><%= link_to(User.all.find(album.user_id).username, user_path(User.all.find(album.user_id))) %></span>
+      "<%= album.title %>" by
+      <%= album.artist %> -
+      <%= album.rating %>
+    </ul>
   <% end %>
-<% end %>
-<% albums.sort! { |a,b| b.created_at <=> a.created_at } %>
-<% albums[0..2].each do |album| %>
-<ul class="album-feed-item">
-  <% if album.spotify_art.nil? %>
-  <span class="follower-feed-pic"><%= image_tag album.art %></span>
-  <% else %>
-  <span class="follower-feed-pic"><%= image_tag album.spotify_art %></span>
-  <% end %>
-  <span class="album-feed-user"><%= link_to(User.all.find(album.user_id).username, user_path(User.all.find(album.user_id))) %></span>
-  "<%= album.title %>" by
-  <%= album.artist %> -
-  <%= album.rating %>
-</ul>
 <% end %>
