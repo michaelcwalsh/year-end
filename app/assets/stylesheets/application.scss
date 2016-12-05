@@ -11,8 +11,8 @@ body {
 #main {
   background-color: #F2F2F2;
   position: relative;
-  width: 67%;
-  min-height: 1000px;
+  width: 80%;
+  min-height: 2400px;
   margin: auto;
   margin-top: 0;
   box-shadow: 1px 1px 1px 1px #888888;
@@ -121,8 +121,10 @@ body {
   border: 0.25em solid #A8A39D;
   border-top: 0em;
   margin: 0em;
-  width: 83%;
+  margin-right: 2em;
+  width: 60%;
   background-color: white;
+  float: right;
 }
 
 #dropdown-title {
@@ -142,9 +144,32 @@ body {
 }
 
 #search_q {
-  width: 90%;
+  width: 65%;
   margin: 2em 2em 0em 2em;
+  float: right;
+}
+
+#album-feed {
+  height: auto;
+  border: 0.2em solid black;
+  background-color: white;
+  border-radius: 2em;
+  margin: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  overflow: auto;
+  position: fixed;
+  width: 15%;
   align-self: center;
+}
+
+.album-feed-item {
+
+}
+
+.follower-feed-pic img {
+    width: 2.5em;
+    border-radius: 50%;
 }
 
 #header-pic img {
