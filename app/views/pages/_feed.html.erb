@@ -1,0 +1,21 @@
+<div class="album-feed-item">
+  <% feed_items = [] %>
+  <% current_user.following_ids.each do |id| %>
+    <% feed_items << Album.where(user_id: id) %>
+  <% end %>
+  <% albums = [] %>
+  <% feed_items.each do |feed_item| %>
+    <% feed_item.each do |album| %>
+      <% albums << album %>
+    <% end %>
+  <% end %>
+  <% albums.sort! { |a,b| b.created_at <=> a.created_at } %>
+  <% albums[0..2].each do |album| %>
+  <ul>
+    <%= User.all.find(album.user_id).username %>
+    <%= album.artist %>
+    "<%= album.title %>" -
+    <%= album.rating %>
+  </ul>
+  <% end %>
+</div>
